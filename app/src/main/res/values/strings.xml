@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KoinAndroidApp</string>
+    <string name="login_title">Welcome to \nKoinAndroidApp</string>
+    <string name="login_username_hint">Username</string>
+    <string name="login_pass_hint">Password</string>
+    <string name="login_btn">Login</string>
+</resources>

@@ -1,0 +1,61 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.2.71'
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    // Libraries version
+
+    // AndroidX
+    androidXLifecycle = "2.0.0"
+    androidXRoom = "2.0.0-rc01"
+    androidXConstraintLayout = "2.0.0-alpha2"
+    androidXKtx = "1.0.0-alpha1"
+    androidXAppCompat = "1.0.0"
+    androidXDrawerLayout = "1.0.0"
+
+    // Navigation component
+    navigationComponent = "1.0.0-alpha06"
+
+    // Koin - dependency injection
+    koinVersion = "1.0.1"
+
+    // Retrofit & OkHttp - networking
+    retrofitVersion = "2.4.0"
+    okHttpVersion = "3.11.0"
+
+    // Gson - Json serialization
+    gsonVersion = "2.8.5"
+
+    // RxJava - reactive programming
+    rxJavaVersion = "2.2.2"
+    rxAndroidVersion = "2.1.0"
+
+    // Picasso - image loader
+    picassoVersion = "2.71828"
+
+
+}
