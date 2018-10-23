@@ -15,4 +15,10 @@ interface PlaceholderRepository {
      */
     fun getUser(id: Long): Single<UserEntity>
 
+    /**
+     * @param username User's username who is wanted to find
+     * @return List of found users with provided [username]. The list should contain one or none user.
+     */
+    fun findUserByUsername(username: String): Single<List<UserEntity>>
+
 }
