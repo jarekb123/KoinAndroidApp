@@ -11,7 +11,6 @@ abstract class BaseActivity : AppCompatActivity() {
 
     private val activityInterceptor by inject<ActivityInterceptor>()
 
-    @LayoutRes
     abstract fun layoutRes(): Int
 
     override fun onCreate(savedInstanceState: Bundle?) {
