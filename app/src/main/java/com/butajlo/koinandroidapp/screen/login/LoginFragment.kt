@@ -7,5 +7,5 @@ class LoginFragment : BaseFragment() {
 
     override val layoutRes = R.layout.screen_login
 
-    
+
 }
