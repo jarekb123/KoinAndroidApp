@@ -57,5 +57,9 @@ ext {
     // Picasso - image loader
     picassoVersion = "2.71828"
 
+    // TEST
+    junit4Version = "4.12"
+    mockitoKotlinVersion = "2.0.0-RC3"
+
 
 }
