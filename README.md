@@ -8,6 +8,7 @@ Mail goals:
 * Design: Material Design
 
 API: Json Placeholder API - https://jsonplaceholder.typicode.com/
+
 Language: Kotlin
 
 Libraries used:
