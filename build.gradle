@@ -37,6 +37,9 @@ ext {
     androidXAppCompat = "1.0.0"
     androidXDrawerLayout = "1.0.0"
 
+    // Material design
+    materialVersion = "1.0.0"
+
     // Navigation component
     navigationComponent = "1.0.0-alpha06"
 

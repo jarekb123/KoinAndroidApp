@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">KoinAndroidApp</string>
+
+    <!-- Login screen -->
     <string name="login_title">Welcome to \nKoinAndroidApp</string>
     <string name="login_username_hint">Username</string>
     <string name="login_pass_hint">Password</string>
     <string name="login_btn">Login</string>
+    <string name="login_error">Login error!</string>
+    <string name="username_field_empty">Username field cannot be empty</string>
+    <string name="password_field_empty">Password field cannot be empty</string>
 </resources>
