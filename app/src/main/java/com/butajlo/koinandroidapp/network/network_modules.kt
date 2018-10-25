@@ -17,6 +17,10 @@ val networkModule = module {
     single<PlaceholderRepository> { PlaceholderRepositoryImpl(get()) }
 }
 
+val sessionModule = module {
+    scope("user_session") { SessionManager() }
+}
+
 const val apiUrl = "https://jsonplaceholder.typicode.com"
 
 private fun createRetrofit(okHttpClient: OkHttpClient) =
