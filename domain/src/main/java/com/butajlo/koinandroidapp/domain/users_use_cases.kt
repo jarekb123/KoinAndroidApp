@@ -1,5 +1,6 @@
 package com.butajlo.koinandroidapp.domain
 
+import com.butajlo.koinandroidapp.domain.entity.UserEntity
 import com.butajlo.koinandroidapp.domain.repository.PlaceholderRepository
 import io.reactivex.Single
 
@@ -18,10 +19,8 @@ fun getUsers(repository: PlaceholderRepository) = repository.getUsers()
  * @param username User's username, who wants to login to the service
  * @return true if user is logged in, false otherwise
  */
-fun loginUser(repository: PlaceholderRepository, username: String): Single<Boolean> {
+fun loginUser(repository: PlaceholderRepository, username: String): Single<UserEntity> {
     return repository
         .findUserByUsername(username)
-        .map {
-            it.any { it.username == username }
-        }
+        .map { it.first() }
 }

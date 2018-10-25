@@ -16,7 +16,7 @@ class LoginViewModel(private val repository: PlaceholderRepository) : ViewModel(
 
     fun login(username: String, password: String) {
         loginUser(repository, username).execute(
-            onSuccess = { isLogin.value = it },
+            onSuccess = { isLogin.value = true },
             onError = {
                 isLogin.value = false
                 Log.e(javaClass.simpleName, "Error during user login", it)
