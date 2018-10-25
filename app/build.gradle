@@ -64,4 +64,5 @@ dependencies {
     // Picasso - images loader
     implementation "com.squareup.picasso:picasso:$picassoVersion"
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
 }

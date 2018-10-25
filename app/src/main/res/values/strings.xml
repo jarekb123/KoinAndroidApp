@@ -9,4 +9,9 @@
     <string name="login_error">Login error!</string>
     <string name="username_field_empty">Username field cannot be empty</string>
     <string name="password_field_empty">Password field cannot be empty</string>
+
+    <!-- Profile screen -->
+    <string name="profile_screen_title">My profile</string>
+    <string name="profile_tab_title">Profile</string>
+    <string name="articles_tab_title">Aritcles</string>
 </resources>

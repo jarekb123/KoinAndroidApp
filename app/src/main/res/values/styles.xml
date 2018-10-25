@@ -8,4 +8,28 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ToolbarTheme" parent="AppTheme">
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="titleTextColor">@color/text_on_bg</item>
+    </style>
+
+    <style name="TabTheme" parent="AppTheme">
+        <item name="android:background">@color/bg_color</item>
+        <item name="tabTextColor">@color/text_on_bg</item>
+    </style>
+
+    <style name="ProfileInfoTheme">
+
+    </style>
+
+    <style name="ProfileInfoTheme.TextOnImage">
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/bg_transparent_white_border</item>
+        <item name="android:textColor">@color/text_btn_half_transparent</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">0.5</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
 </resources>
