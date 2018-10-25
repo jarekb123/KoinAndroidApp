@@ -56,6 +56,7 @@ ext {
     // RxJava - reactive programming
     rxJavaVersion = "2.2.2"
     rxAndroidVersion = "2.1.0"
+    rxKotlinVersion = "2.3.0"
 
     // Picasso - image loader
     picassoVersion = "2.71828"

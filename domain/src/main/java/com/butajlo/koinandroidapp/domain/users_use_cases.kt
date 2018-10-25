@@ -3,6 +3,7 @@ package com.butajlo.koinandroidapp.domain
 import com.butajlo.koinandroidapp.domain.entity.UserEntity
 import com.butajlo.koinandroidapp.domain.repository.PlaceholderRepository
 import io.reactivex.Single
+import io.reactivex.exceptions.Exceptions
 
 /**
  * Get Users Use Case
@@ -22,5 +23,11 @@ fun getUsers(repository: PlaceholderRepository) = repository.getUsers()
 fun loginUser(repository: PlaceholderRepository, username: String): Single<UserEntity> {
     return repository
         .findUserByUsername(username)
-        .map { it.first() }
+        .map {
+            try {
+                it.first()
+            } catch (e: Exception) {
+                throw Exceptions.propagate(e)
+            }
+        }
 }
