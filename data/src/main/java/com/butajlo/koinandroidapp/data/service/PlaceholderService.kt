@@ -4,6 +4,7 @@ import com.butajlo.koinandroidapp.data.model.UserData
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface PlaceholderService {
 
@@ -12,5 +13,8 @@ interface PlaceholderService {
 
     @GET("users/{id}")
     fun getUser(@Path("id") id: Long): Single<UserData>
+
+    @GET("users")
+    fun findUserByUsername(@Query("username") username: String): Single<List<UserData>>
 
 }

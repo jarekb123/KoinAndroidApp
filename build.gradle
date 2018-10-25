@@ -37,6 +37,9 @@ ext {
     androidXAppCompat = "1.0.0"
     androidXDrawerLayout = "1.0.0"
 
+    // Material design
+    materialVersion = "1.0.0"
+
     // Navigation component
     navigationComponent = "1.0.0-alpha06"
 
@@ -56,6 +59,10 @@ ext {
 
     // Picasso - image loader
     picassoVersion = "2.71828"
+
+    // TEST
+    junit4Version = "4.12"
+    mockitoKotlinVersion = "2.0.0-RC3"
 
 
 }

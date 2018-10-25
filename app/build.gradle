@@ -37,6 +37,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-extensions:$androidXLifecycle"
     implementation "androidx.drawerlayout:drawerlayout:$androidXDrawerLayout"
 
+    // Material Design
+    implementation "com.google.android.material:material:$materialVersion"
 
     // Android Navigation component
     implementation "android.arch.navigation:navigation-fragment-ktx:$navigationComponent"
