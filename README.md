@@ -8,7 +8,9 @@ Mail goals:
 * Design: Material Design
 
 API: Json Placeholder API - https://jsonplaceholder.typicode.com/
+
 Language: Kotlin
+
 Kanban board: https://trello.com/b/0BPxcVMh/koin-json-placeholder-app
 
 Libraries used:
