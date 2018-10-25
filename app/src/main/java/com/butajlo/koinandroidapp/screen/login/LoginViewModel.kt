@@ -7,21 +7,29 @@ import com.butajlo.koinandroidapp.R
 import com.butajlo.koinandroidapp.domain.loginUser
 import com.butajlo.koinandroidapp.domain.repository.PlaceholderRepository
 import com.butajlo.koinandroidapp.rx.execute
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxkotlin.addTo
 
 class LoginViewModel(private val repository: PlaceholderRepository) : ViewModel() {
+
+    private val subscriptions = CompositeDisposable()
 
     val isLogin = MutableLiveData<Boolean>()
     val usernameFieldErrorRes = MutableLiveData<Int>()
     val passwordFieldErrorRes = MutableLiveData<Int>()
 
+    override fun onCleared() {
+        subscriptions.clear()
+    }
+
     fun login(username: String, password: String) {
         loginUser(repository, username).execute(
-            onSuccess = { isLogin.value = it },
+            onSuccess = { isLogin.value = true },
             onError = {
                 isLogin.value = false
                 Log.e(javaClass.simpleName, "Error during user login", it)
             }
-        )
+        ).addTo(subscriptions)
     }
 
     fun validateUsername(username: String) {
