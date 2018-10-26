@@ -11,6 +11,7 @@
     <string name="password_field_empty">Password field cannot be empty</string>
 
     <!-- Profile screen -->
+    <string name="key_user_id">ProfileFragment.KEY_USER_ID</string>
     <string name="profile_screen_title">My profile</string>
     <string name="profile_tab_title">Profile</string>
     <string name="articles_tab_title">Aritcles</string>

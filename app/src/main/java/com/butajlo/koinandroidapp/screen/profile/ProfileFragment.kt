@@ -5,6 +5,8 @@ import com.butajlo.koinandroidapp.R
 import com.butajlo.koinandroidapp.base.BaseFragment
 import com.butajlo.koinandroidapp.network.sessionModule
 import com.butajlo.koinandroidapp.ui.argument
+import org.koin.android.scope.ext.android.bindScope
+import org.koin.android.scope.ext.android.getOrCreateScope
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.standalone.StandAloneContext.loadKoinModules
 
@@ -20,6 +22,7 @@ class ProfileFragment : BaseFragment() {
 
         // first run
         if (savedInstanceState == null) {
+            bindScope(getOrCreateScope("user_session"))
             viewModel.login(userId)
         }
     }

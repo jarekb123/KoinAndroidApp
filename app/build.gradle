@@ -32,6 +32,7 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     // AndroidX
+    implementation "androidx.core:core-ktx:$androidXKtx"
     implementation "androidx.appcompat:appcompat:$androidXAppCompat"
     implementation "androidx.constraintlayout:constraintlayout:$androidXConstraintLayout"
     implementation "androidx.lifecycle:lifecycle-extensions:$androidXLifecycle"

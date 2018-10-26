@@ -3,9 +3,12 @@ package com.butajlo.koinandroidapp.screen.login
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.butajlo.koinandroidapp.R
 import com.butajlo.koinandroidapp.base.BaseFragment
+import com.butajlo.koinandroidapp.screen.profile.ProfileFragment
 import com.butajlo.koinandroidapp.ui.afterTextChanged
 import kotlinx.android.synthetic.main.screen_login.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -38,7 +41,7 @@ class LoginFragment : BaseFragment() {
 
     private fun receivedLoginStatus(isLogin: Boolean) {
         if (isLogin) {
-            Toast.makeText(context, "Login success", Toast.LENGTH_SHORT).show()
+
         } else {
             Toast.makeText(context, R.string.login_error, Toast.LENGTH_SHORT).show()
         }

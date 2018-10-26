@@ -9,5 +9,17 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.butajlo.koinandroidapp.screen.login.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_login_to_profile"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.butajlo.koinandroidapp.screen.profile.ProfileFragment"
+        android:label="ProfileFragment" >
+        <argument
+            android:name="@string/key_user_id"
+            android:defaultValue="-1" />
+    </fragment>
 </navigation>
