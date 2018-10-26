@@ -8,6 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.butajlo.koinandroidapp.R
 import com.butajlo.koinandroidapp.base.BaseFragment
+import com.butajlo.koinandroidapp.domain.entity.UserEntity
 import com.butajlo.koinandroidapp.screen.profile.ProfileFragment
 import com.butajlo.koinandroidapp.ui.afterTextChanged
 import kotlinx.android.synthetic.main.screen_login.*
@@ -22,7 +23,7 @@ class LoginFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.isLogin.observe(this, Observer(::receivedLoginStatus))
+        viewModel.loggedInUser.observe(this, Observer(::loggedInUserChanged))
         btn_login.setOnClickListener(::onLoginClick)
         setupFieldsValidation()
     }
@@ -39,9 +40,10 @@ class LoginFragment : BaseFragment() {
         viewModel.login(et_username.text.toString(), et_password.text.toString())
     }
 
-    private fun receivedLoginStatus(isLogin: Boolean) {
-        if (isLogin) {
-
+    private fun loggedInUserChanged(user: UserEntity?) {
+        if (user != null) {
+            val arguments = bundleOf(ProfileFragment.KEY_USER_ID to user.id)
+            findNavController().navigate(R.id.action_login_to_profile, arguments)
         } else {
             Toast.makeText(context, R.string.login_error, Toast.LENGTH_SHORT).show()
         }
