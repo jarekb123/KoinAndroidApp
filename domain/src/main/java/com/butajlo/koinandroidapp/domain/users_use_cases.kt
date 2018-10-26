@@ -31,3 +31,12 @@ fun loginUser(repository: PlaceholderRepository, username: String): Single<UserE
             }
         }
 }
+
+/**
+ * Get User By Id Use Case
+ *
+ * @param repository [PlaceholderRepository] which provides data
+ * @param userId User's id
+ * @return UserEntity with provided [userId]
+ */
+fun getUserById(repository: PlaceholderRepository, userId: Long) = repository.getUser(userId)

@@ -14,5 +14,5 @@
     <string name="key_user_id">ProfileFragment.KEY_USER_ID</string>
     <string name="profile_screen_title">My profile</string>
     <string name="profile_tab_title">Profile</string>
-    <string name="articles_tab_title">Aritcles</string>
+    <string name="articles_tab_title">Posts</string>
 </resources>

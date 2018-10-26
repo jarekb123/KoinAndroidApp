@@ -15,7 +15,9 @@ class SessionManager {
             }
         }
 
-    private var userId = -1L
+    var userId = -1L
+        private set
+
 
     fun isLoggedIn() = userId != -1L
 

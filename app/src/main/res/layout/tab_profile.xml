@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="model"
+            type="com.butajlo.koinandroidapp.screen.profile.info.ProfileInfoBindingModel"/>
+    </data>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -24,7 +30,7 @@
 
             <TextView
                 style="@style/ProfileInfoTheme.TextOnImage"
-                android:text="10 Articles"/>
+                android:text='@{model.postsCount + " posts"}'/>
             <TextView
                 style="@style/ProfileInfoTheme.TextOnImage"
                 android:text="10 Albums"/>
@@ -36,3 +42,4 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
+</layout>

@@ -1,5 +1,6 @@
 package com.butajlo.koinandroidapp.data.service
 
+import com.butajlo.koinandroidapp.data.model.PostData
 import com.butajlo.koinandroidapp.data.model.UserData
 import io.reactivex.Single
 import retrofit2.http.GET
@@ -16,5 +17,8 @@ interface PlaceholderService {
 
     @GET("users")
     fun findUserByUsername(@Query("username") username: String): Single<List<UserData>>
+
+    @GET("posts")
+    fun findPostsByUserId(@Query("userId") userId: Long): Single<List<PostData>>
 
 }
