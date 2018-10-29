@@ -17,6 +17,7 @@ Libraries used:
 * Android
   * Lifecycle extensions - LiveData, ViewModel
   * Navigation Component
+  * Data Binding
 * Koin (with Android, ViewModel extension) - Dependency Injection
 * Networking
   * Retrofit2
