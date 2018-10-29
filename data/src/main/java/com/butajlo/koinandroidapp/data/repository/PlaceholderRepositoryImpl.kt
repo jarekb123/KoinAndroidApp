@@ -2,6 +2,7 @@ package com.butajlo.koinandroidapp.data.repository
 
 import com.butajlo.koinandroidapp.data.mapper.toEntity
 import com.butajlo.koinandroidapp.data.service.PlaceholderService
+import com.butajlo.koinandroidapp.domain.entity.AlbumEntity
 import com.butajlo.koinandroidapp.domain.entity.PostEntity
 import com.butajlo.koinandroidapp.domain.entity.TodoEntity
 import com.butajlo.koinandroidapp.domain.entity.UserEntity
@@ -23,5 +24,8 @@ class PlaceholderRepositoryImpl(private val placeholderService: PlaceholderServi
 
     override fun findTodosForUser(userId: Long): Single<List<TodoEntity>>
             = placeholderService.findTodosByUserId(userId).map { it.map { it.toEntity() } }
+
+    override fun findAlbumsByUserId(userId: Long): Single<List<AlbumEntity>>
+            = placeholderService.findAlbumsByUserId(userId).map { it.map { it.toEntity() } }
 
 }

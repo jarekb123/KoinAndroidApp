@@ -1,5 +1,6 @@
 package com.butajlo.koinandroidapp.domain.repository
 
+import com.butajlo.koinandroidapp.domain.entity.AlbumEntity
 import com.butajlo.koinandroidapp.domain.entity.PostEntity
 import com.butajlo.koinandroidapp.domain.entity.TodoEntity
 import com.butajlo.koinandroidapp.domain.entity.UserEntity
@@ -26,5 +27,7 @@ interface PlaceholderRepository {
     fun findPostsByUserId(userId: Long): Single<List<PostEntity>>
 
     fun findTodosForUser(userId: Long): Single<List<TodoEntity>>
+
+    fun findAlbumsByUserId(userId: Long): Single<List<AlbumEntity>>
 
 }

@@ -1,5 +1,6 @@
 package com.butajlo.koinandroidapp.data.service
 
+import com.butajlo.koinandroidapp.data.model.AlbumData
 import com.butajlo.koinandroidapp.data.model.PostData
 import com.butajlo.koinandroidapp.data.model.TodoData
 import com.butajlo.koinandroidapp.data.model.UserData
@@ -24,5 +25,8 @@ interface PlaceholderService {
 
     @GET("users/{id}/todos")
     fun findTodosByUserId(@Path("id") userId: Long): Single<List<TodoData>>
+
+    @GET("users/{id}/albums")
+    fun findAlbumsByUserId(@Path("id") userId: Long): Single<List<AlbumData>>
 
 }

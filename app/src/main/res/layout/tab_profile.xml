@@ -33,7 +33,7 @@
                 android:text='@{model.postsCount + " Posts"}'/>
             <TextView
                 style="@style/ProfileInfoTheme.TextOnImage"
-                android:text="10 Albums" />
+                android:text='@{model.albumsCount + " Albums"}' />
             <TextView
                 style="@style/ProfileInfoTheme.TextOnImage"
                 android:text='@{model.todosCount + " Todos"}'/>
