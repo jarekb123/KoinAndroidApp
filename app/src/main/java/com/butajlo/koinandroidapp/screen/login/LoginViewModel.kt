@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.butajlo.koinandroidapp.R
+import com.butajlo.koinandroidapp.domain.entity.UserEntity
 import com.butajlo.koinandroidapp.domain.loginUser
 import com.butajlo.koinandroidapp.domain.repository.PlaceholderRepository
 import com.butajlo.koinandroidapp.rx.execute
@@ -14,7 +15,7 @@ class LoginViewModel(private val repository: PlaceholderRepository) : ViewModel(
 
     private val subscriptions = CompositeDisposable()
 
-    val isLogin = MutableLiveData<Boolean>()
+    val loggedInUser = MutableLiveData<UserEntity>()
     val usernameFieldErrorRes = MutableLiveData<Int>()
     val passwordFieldErrorRes = MutableLiveData<Int>()
 
@@ -24,9 +25,9 @@ class LoginViewModel(private val repository: PlaceholderRepository) : ViewModel(
 
     fun login(username: String, password: String) {
         loginUser(repository, username).execute(
-            onSuccess = { isLogin.value = true },
+            onSuccess = { loggedInUser.value = it },
             onError = {
-                isLogin.value = false
+                loggedInUser.value = null
                 Log.e(javaClass.simpleName, "Error during user login", it)
             }
         ).addTo(subscriptions)

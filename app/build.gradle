@@ -21,6 +21,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    dataBinding {
+        enabled = true
+    }
 }
 
 dependencies {
@@ -32,6 +36,7 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     // AndroidX
+    implementation "androidx.core:core-ktx:$androidXKtx"
     implementation "androidx.appcompat:appcompat:$androidXAppCompat"
     implementation "androidx.constraintlayout:constraintlayout:$androidXConstraintLayout"
     implementation "androidx.lifecycle:lifecycle-extensions:$androidXLifecycle"
@@ -65,4 +70,5 @@ dependencies {
     // Picasso - images loader
     implementation "com.squareup.picasso:picasso:$picassoVersion"
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
 }

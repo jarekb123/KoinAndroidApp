@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="bg_color">@color/colorPrimaryDark</color>
+    <color name="text_on_bg">#FFFFFF</color>
+
+    <color name="transparent">#00FFFFFF</color>
+    <color name="button_half_transparent">#7a000000</color>
+    <color name="text_btn_half_transparent">#FFFFFF</color>
+    <color name="border_on_transparent">@color/text_on_bg</color>
 </resources>
