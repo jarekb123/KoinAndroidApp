@@ -1,6 +1,7 @@
 package com.butajlo.koinandroidapp.domain.repository
 
 import com.butajlo.koinandroidapp.domain.entity.PostEntity
+import com.butajlo.koinandroidapp.domain.entity.TodoEntity
 import com.butajlo.koinandroidapp.domain.entity.UserEntity
 import io.reactivex.Single
 
@@ -23,5 +24,7 @@ interface PlaceholderRepository {
     fun findUserByUsername(username: String): Single<List<UserEntity>>
 
     fun findPostsByUserId(userId: Long): Single<List<PostEntity>>
+
+    fun findTodosForUser(userId: Long): Single<List<TodoEntity>>
 
 }

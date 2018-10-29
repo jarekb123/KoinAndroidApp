@@ -30,13 +30,13 @@
 
             <TextView
                 style="@style/ProfileInfoTheme.TextOnImage"
-                android:text='@{model.postsCount + " posts"}'/>
+                android:text='@{model.postsCount + " Posts"}'/>
             <TextView
                 style="@style/ProfileInfoTheme.TextOnImage"
-                android:text="10 Albums"/>
+                android:text="10 Albums" />
             <TextView
                 style="@style/ProfileInfoTheme.TextOnImage"
-                android:text="10 Images"/>
+                android:text='@{model.todosCount + " Todos"}'/>
 
         </LinearLayout>
 

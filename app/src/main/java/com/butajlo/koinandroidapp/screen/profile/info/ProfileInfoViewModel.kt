@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.butajlo.koinandroidapp.domain.countPostsByUser
+import com.butajlo.koinandroidapp.domain.countTodosByUser
 import com.butajlo.koinandroidapp.domain.repository.PlaceholderRepository
 import com.butajlo.koinandroidapp.network.SessionManager
 import com.butajlo.koinandroidapp.rx.execute
@@ -24,11 +25,20 @@ class ProfileInfoViewModel(
                         value = value?.copy(postsCount = count)
                     }
                 },
-                onError = { onError(it, -1) }
+                onError = { onError(it) }
+            )
+        countTodosByUser(repository = repository, userId = sessionManager.userId)
+            .execute(
+                onSuccess = { count ->
+                    dataBindingModel.apply {
+                        value = value?.copy(todosCount = count)
+                    }
+                },
+                onError = { onError(it) }
             )
     }
 
-    private fun onError(throwable: Throwable, errorRes: Int) {
+    private fun onError(throwable: Throwable) {
         Log.e(javaClass.simpleName, "Error during loading", throwable)
     }
 }

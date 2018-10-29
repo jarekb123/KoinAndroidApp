@@ -21,12 +21,12 @@ class LoginUserTest {
     @Test
     fun loginUser_RepoEmptyList_SingleShouldReturnFalse() {
         whenever(repository.findUserByUsername(any())).thenReturn(Single.just(emptyList()))
-        loginUser().test().assertValue(false)
+        loginUser().test().assertError(NoSuchElementException::class.java)
     }
 
     @Test
     fun loginUser_RepoNonEmptyList_SingleShouldReturnTrue() {
         whenever(repository.findUserByUsername(mockUser.username)).thenReturn(Single.just(listOf(mockUser)))
-        loginUser().test().assertValue(true)
+        loginUser().test().assertValue(mockUser)
     }
 }
