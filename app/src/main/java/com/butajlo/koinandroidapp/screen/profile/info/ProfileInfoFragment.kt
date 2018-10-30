@@ -17,7 +17,8 @@ class ProfileInfoFragment : BaseFragment() {
 
     init {
         afterViews {
-            viewModel.dataBindingModel.observe(this, Observer { binding?.model = it })
+            viewModel.infoBindingModel.observe(this, Observer { binding?.model = it })
+            viewModel.randomPostBindingModel.observe(this, Observer { binding?.post = it })
         }
     }
 }

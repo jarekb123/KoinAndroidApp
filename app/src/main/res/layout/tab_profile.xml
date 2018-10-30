@@ -1,45 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+        <import type="android.view.View"/>
         <variable
             name="model"
-            type="com.butajlo.koinandroidapp.screen.profile.info.ProfileInfoBindingModel"/>
+            type="com.butajlo.koinandroidapp.screen.profile.info.ProfileInfoBindingModel" />
+        <variable
+            name="post"
+            type="com.butajlo.koinandroidapp.ui.sharedbindings.CardPostBindingModel"/>
     </data>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/iv_profile_bg"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/mock_profile_bg" />
+            android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/iv_profile_bg">
+            <ImageView
+                android:id="@+id/iv_profile_bg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/mock_profile_bg" />
 
-            <TextView
-                style="@style/ProfileInfoTheme.TextOnImage"
-                android:text='@{model.postsCount + " Posts"}'/>
-            <TextView
-                style="@style/ProfileInfoTheme.TextOnImage"
-                android:text='@{model.albumsCount + " Albums"}' />
-            <TextView
-                style="@style/ProfileInfoTheme.TextOnImage"
-                android:text='@{model.todosCount + " Todos"}'/>
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_profile_bg">
 
-        </LinearLayout>
+                <TextView
+                    style="@style/ProfileInfoTheme.TextOnImage"
+                    android:text='@{model.postsCount + " Posts"}' />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</LinearLayout>
+                <TextView
+                    style="@style/ProfileInfoTheme.TextOnImage"
+                    android:text='@{model.albumsCount + " Albums"}' />
+
+                <TextView
+                    style="@style/ProfileInfoTheme.TextOnImage"
+                    android:text='@{model.todosCount + " Todos"}' />
+
+            </LinearLayout>
+
+            <include
+                android:id="@+id/layout_random_post"
+                layout="@layout/item_post"
+                android:visibility="@{post != null ? View.VISIBLE : View.GONE}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                app:post="@{post}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>
