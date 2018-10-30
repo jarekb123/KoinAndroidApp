@@ -2,18 +2,21 @@
 
 This is demo app. It is used for learning purposes.
 
-Mail goals:
+## Mail goals
 * Use Koin instead of Dagger2 for dependency injection
 * Architecture: Clean Architecture + MVVM
 * Design: Material Design
 
-API: Json Placeholder API - https://jsonplaceholder.typicode.com/
+## API
+Json Placeholder API - https://jsonplaceholder.typicode.com/
 
-Language: Kotlin
+## Language
+Kotlin
 
-Kanban board: https://trello.com/b/0BPxcVMh/koin-json-placeholder-app
+## Kanban board
+https://trello.com/b/0BPxcVMh/koin-json-placeholder-app
 
-Libraries used:
+## Libraries used
 * Android
   * Lifecycle extensions - LiveData, ViewModel
   * Navigation Component
@@ -25,4 +28,7 @@ Libraries used:
   * Gson - JSON serialization
 * RxJava, RxAndroid
 * Picasso - image loading
+
+## Planned
+* Store favorite posts in SQLite using Room
   
