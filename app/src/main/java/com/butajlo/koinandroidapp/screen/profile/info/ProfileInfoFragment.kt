@@ -10,7 +10,6 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class ProfileInfoFragment : BaseFragment() {
 
     override val layoutRes = R.layout.tab_profile
-    override val fragmentModules = listOf(profileInfoModule)
 
     private val binding: TabProfileBinding? by binding()
     private val viewModel: ProfileInfoViewModel by viewModel()

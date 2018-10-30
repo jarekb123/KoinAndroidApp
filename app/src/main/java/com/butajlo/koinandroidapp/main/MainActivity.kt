@@ -26,6 +26,8 @@ class MainActivity : BaseActivity() {
     }
 
     override fun onBackPressed() {
-        findNavController(R.id.main_nav_host_fragment).navigateUp()
+        if(!findNavController(R.id.main_nav_host_fragment).navigateUp()) {
+            super.onBackPressed()
+        }
     }
 }
