@@ -9,7 +9,7 @@
             type="com.butajlo.koinandroidapp.screen.profile.info.ProfileInfoBindingModel" />
         <variable
             name="post"
-            type="com.butajlo.koinandroidapp.ui.sharedbindings.CardPostBindingModel"/>
+            type="com.butajlo.koinandroidapp.sharedbindings.CardPostBindingModel"/>
     </data>
 
     <LinearLayout

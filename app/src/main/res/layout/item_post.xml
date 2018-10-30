@@ -6,7 +6,7 @@
 
         <variable
             name="post"
-            type="com.butajlo.koinandroidapp.ui.sharedbindings.CardPostBindingModel" />
+            type="com.butajlo.koinandroidapp.sharedbindings.CardPostBindingModel" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -46,6 +46,7 @@
                 android:maxLines="2"
                 android:text="@{post.content}"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                app:layout_constrainedWidth="true"
                 app:layout_constraintEnd_toStartOf="@id/iv_post_image"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"

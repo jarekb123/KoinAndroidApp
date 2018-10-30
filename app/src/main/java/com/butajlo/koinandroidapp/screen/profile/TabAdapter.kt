@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.butajlo.koinandroidapp.R
 import com.butajlo.koinandroidapp.screen.profile.info.ProfileInfoFragment
+import com.butajlo.koinandroidapp.screen.profile.myposts.MyPostsFragment
 import com.butajlo.koinandroidapp.ui.tablayout.TabLayoutLabelAdapter
 
 class TabAdapter(fm: FragmentManager)
@@ -13,7 +14,7 @@ class TabAdapter(fm: FragmentManager)
     override fun getItem(position: Int): Fragment {
         return when(position) {
             0 -> ProfileInfoFragment()
-            else -> Fragment()
+            else -> MyPostsFragment()
         }
     }
 

@@ -1,4 +1,4 @@
-package com.butajlo.koinandroidapp.ui.sharedbindings
+package com.butajlo.koinandroidapp.sharedbindings
 
 data class CardPostBindingModel(
     val id: Long,
