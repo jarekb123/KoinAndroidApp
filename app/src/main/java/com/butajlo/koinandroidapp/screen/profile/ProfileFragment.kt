@@ -1,9 +1,9 @@
 package com.butajlo.koinandroidapp.screen.profile
 
 import android.os.Bundle
+import androidx.navigation.fragment.findNavController
 import com.butajlo.koinandroidapp.R
 import com.butajlo.koinandroidapp.base.BaseFragment
-import com.butajlo.koinandroidapp.network.sessionModule
 import com.butajlo.koinandroidapp.ui.argument
 import com.butajlo.koinandroidapp.ui.tablayout.setLabelsAdapter
 import kotlinx.android.synthetic.main.screen_profile.*
@@ -14,7 +14,6 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class ProfileFragment : BaseFragment() {
 
     override val layoutRes = R.layout.screen_profile
-    override val fragmentModules = listOf(sessionModule, profileModule)
 
     private val userId by argument<Long>(KEY_USER_ID)
     private val viewModel by viewModel<ProfileViewModel>()
@@ -40,6 +39,7 @@ class ProfileFragment : BaseFragment() {
                     tl_tabs.setLabelsAdapter(adapter)
                 }
             }
+            findNavController().popBackStack()
         }
     }
 

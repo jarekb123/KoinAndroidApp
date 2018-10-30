@@ -17,7 +17,6 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class LoginFragment : BaseFragment() {
 
     override val layoutRes = R.layout.screen_login
-    override val fragmentModules = listOf(loginModule)
 
     private val viewModel: LoginViewModel by viewModel()
 

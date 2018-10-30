@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import org.koin.dsl.module.Module
-import org.koin.standalone.StandAloneContext.loadKoinModules
 
 typealias NoArgsFun = () -> Unit
 
@@ -17,17 +15,11 @@ abstract class BaseFragment : Fragment() {
      */
     abstract val layoutRes: Int
 
-    /**
-     * List of [Module]s which contains beans used in this fragment
-     */
-    protected open val fragmentModules = emptyList<Module>()
-
     private val beforeViewsFuns = mutableListOf<NoArgsFun>()
     private val afterViewsFuns = mutableListOf<NoArgsFun>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        loadKoinModules(fragmentModules)
         beforeViewsFuns.forEach { it() }
     }
 
