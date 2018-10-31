@@ -27,6 +27,7 @@ class MyPostsAdapter : RecyclerView.Adapter<MyPostsAdapter.ViewHolder>() {
     fun setPosts(newPosts: List<CardPostBindingModel>) {
         posts.clear()
         posts.addAll(newPosts)
+        notifyDataSetChanged()
     }
 
 
