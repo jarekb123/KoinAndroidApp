@@ -18,11 +18,6 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindScope(getOrCreateScope("activity_scope"))
-
-        getUsers(get()).execute(
-            onSuccess = { Log.d("response", it.toString()) },
-            onError = { Log.e("response error", it.toString()) }
-        )
     }
 
     override fun onBackPressed() {
