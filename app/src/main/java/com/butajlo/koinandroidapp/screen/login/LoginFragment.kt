@@ -20,12 +20,12 @@ class LoginFragment : BaseFragment() {
 
     private val viewModel: LoginViewModel by viewModel()
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        viewModel.loggedInUser.observe(this, Observer(::loggedInUserChanged))
-        btn_login.setOnClickListener(::onLoginClick)
-        setupFieldsValidation()
+    init {
+        afterViews {
+            viewModel.loggedInUser.observe(this, Observer(::loggedInUserChanged))
+            btn_login.setOnClickListener(::onLoginClick)
+            setupFieldsValidation()
+        }
     }
 
     private fun setupFieldsValidation() {

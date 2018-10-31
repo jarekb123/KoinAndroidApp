@@ -1,6 +1,5 @@
 package com.butajlo.koinandroidapp.di
 
-import android.app.Activity
 import androidx.lifecycle.LifecycleOwner
 import org.koin.android.scope.ext.android.bindScope
 import org.koin.android.scope.ext.android.getOrCreateScope
