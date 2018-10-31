@@ -1,5 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -7,7 +8,7 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 24
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -23,23 +24,21 @@ android {
     }
 
 }
+kapt {
+    generateStubs = true
+}
 
 dependencies {
+
     implementation project(":domain")
-    implementation project(":persistence")
 
     // Kotlin StdLib
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
-    // Retrofit & OkHttp - networking
-    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
-
-    // RxJava - reactive programming
-    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
-
-    // Gson
-    implementation "com.google.code.gson:gson:$gsonVersion"
+    // Room
+    implementation "androidx.room:room-runtime:$androidXRoom"
+    kapt           "androidx.room:room-compiler-ktx:$androidXRoom"
+    implementation "androidx.room:room-rxjava2:$androidXRoom"
 
     testImplementation 'junit:junit:4.12'
-
 }

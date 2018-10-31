@@ -74,8 +74,8 @@ class ProfileInfoViewModel(
                                 id = it.id,
                                 title = it.title,
                                 content = it.body,
-                                imageUrl = "https://picsum.photos/160/160/?random", // random 160x160 photo
-                                isFavorite = false,
+                                imageUrl = "https://picsum.photos/160/160/?random=${it.id}", // random 160x160 photo
+                                isFavorite = it.isFavorite,
                                 info = "Random Post"
                             )
                 },
