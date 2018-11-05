@@ -5,7 +5,9 @@ import com.butajlo.koinandroidapp.data.model.PostData
 import com.butajlo.koinandroidapp.data.model.TodoData
 import com.butajlo.koinandroidapp.data.model.UserData
 import io.reactivex.Single
-import retrofit2.http.*
+import retrofit2.http.GET
+import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface PlaceholderService {
 
@@ -20,9 +22,6 @@ interface PlaceholderService {
 
     @GET("posts")
     fun findPostsByUserId(@Query("userId") userId: Long): Single<List<PostData>>
-
-    @PUT("posts/{id}")
-    fun updatePost(@Body postData: PostData, postId: Long): Single<PostData>
 
     @GET("users/{id}/todos")
     fun findTodosByUserId(@Path("id") userId: Long): Single<List<TodoData>>

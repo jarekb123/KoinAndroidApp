@@ -24,7 +24,7 @@ class MyPostsViewModel(
     private fun getMyPosts() {
         getPostsByUser(repository = repository, userId = sessionManager.userId)
             .execute(
-                onSuccess = { myPosts.value = it.map { it.toBindingModel() } },
+                onSuccess = { myPosts.value = it.map { it.toBindingModel(isFavorite = false) } },
                 onError = { onError(it) }
             )
     }

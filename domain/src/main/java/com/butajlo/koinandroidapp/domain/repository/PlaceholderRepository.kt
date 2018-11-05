@@ -4,7 +4,6 @@ import com.butajlo.koinandroidapp.domain.entity.AlbumEntity
 import com.butajlo.koinandroidapp.domain.entity.PostEntity
 import com.butajlo.koinandroidapp.domain.entity.TodoEntity
 import com.butajlo.koinandroidapp.domain.entity.UserEntity
-import io.reactivex.Maybe
 import io.reactivex.Single
 
 interface PlaceholderRepository {
