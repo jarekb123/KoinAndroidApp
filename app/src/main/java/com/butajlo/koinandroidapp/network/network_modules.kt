@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 val networkModule = module {
     single { createOkHttpClient() }
     single<PlaceholderService> { createRetrofit(get()).create(PlaceholderService::class.java) }
-    single<PlaceholderRepository> { PlaceholderRepositoryImpl(get()) }
+    single<PlaceholderRepository> { PlaceholderRepositoryImpl(get(), get()) }
 }
 
 val sessionModule = module {

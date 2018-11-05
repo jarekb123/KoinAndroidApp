@@ -31,9 +31,10 @@ ext {
 
     // AndroidX
     androidXLifecycle = "2.0.0"
+    androidXArchCore = "2.0.1-alpha01"
     androidXRoom = "2.1.0-alpha02"
     androidXConstraintLayout = "2.0.0-alpha2"
-    androidXKtx = "1.0.0-alpha1"
+    androidXKtx = "1.0.0"
     androidXAppCompat = "1.0.0"
     androidXDrawerLayout = "1.0.0"
 
@@ -41,7 +42,7 @@ ext {
     materialVersion = "1.0.0"
 
     // Navigation component
-    navigationComponent = "1.0.0-alpha06"
+    navigationComponent = "1.0.0-alpha07"
 
     // Koin - dependency injection
     koinVersion = "1.0.1"

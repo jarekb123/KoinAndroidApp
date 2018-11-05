@@ -31,19 +31,19 @@ dependencies {
 
     implementation project(":data")
     implementation project(":domain")
+    implementation project(":persistence")
 
     // Kotlin StdLib
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     // AndroidX
     implementation "androidx.core:core-ktx:$androidXKtx"
+    implementation "androidx.arch.core:core-runtime:$androidXArchCore"
     implementation "androidx.appcompat:appcompat:$androidXAppCompat"
     implementation "androidx.constraintlayout:constraintlayout:$androidXConstraintLayout"
     implementation "androidx.lifecycle:lifecycle-extensions:$androidXLifecycle"
     implementation "androidx.drawerlayout:drawerlayout:$androidXDrawerLayout"
-    implementation "androidx.room:room-runtime:$androidXRoom"
-    kapt           "androidx.room:room-compiler:$androidXRoom"
-    implementation "androidx.room:room-rxjava2:$androidXRoom"
+
 
     // Material Design
     implementation "com.google.android.material:material:$materialVersion"

@@ -16,12 +16,12 @@ interface PostDbDao {
     fun getPostsByUser(userId: Long): Single<List<PostDbEntity>>
 
     @Query("SELECT COUNT(*) FROM post WHERE user_id = :userId")
-    fun countPostsByUser(userId: Long, postId: Long): Single<Int>
+    fun countPostsByUser(userId: Long): Single<Int>
 
     @Update
-    fun updatePost(post: PostDbEntity): Single<PostDbEntity>
+    fun updatePost(post: PostDbEntity)
 
-    @Delete
+    @Query("DELETE FROM post")
     fun deleteAllFavoritePosts()
 
 }
