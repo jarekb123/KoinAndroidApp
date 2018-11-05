@@ -10,7 +10,7 @@ import com.butajlo.koinandroidapp.domain.randomPostByUser
 import com.butajlo.koinandroidapp.domain.repository.PlaceholderRepository
 import com.butajlo.koinandroidapp.network.SessionManager
 import com.butajlo.koinandroidapp.rx.execute
-import com.butajlo.koinandroidapp.ui.sharedbindings.CardPostBindingModel
+import com.butajlo.koinandroidapp.sharedbindings.CardPostBindingModel
 
 class ProfileInfoViewModel(
     private val sessionManager: SessionManager,

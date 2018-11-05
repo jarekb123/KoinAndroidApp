@@ -28,3 +28,6 @@ fun randomPostByUser(repository: PlaceholderRepository, userId: Long): Single<Po
         repository
             .findPostsByUserId(userId)
             .map { it.random() }
+
+fun getPostsByUser(repository: PlaceholderRepository, userId: Long): Single<List<PostEntity>> =
+        repository.findPostsByUserId(userId)
